@@ -7,6 +7,23 @@ public class Challenges {
     public static void main(String[] args) {
 
     }
+//    1486. XOR Operation in an Array
+//    Given an integer n and an integer start.
+//    Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
+//    Return the bitwise XOR of all elements of nums.
+    public int xorOperation(int n, int start) {
+        int[]newArray = new int [n];
+        int sum = 0;
+
+        for(int i=0; i<n; i++){
+            newArray[i]=start;
+            sum^=newArray[i];
+            start +=2;
+        }
+        return sum;
+
+
+    }
 //    1528. Shuffle String
 //    Given a string s and an integer array indices of the same length.
 //    The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.

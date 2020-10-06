@@ -7,6 +7,45 @@ public class Challenges {
     public static void main(String[] args) {
 
     }
+//    1266. Minimum Time Visiting All Points
+//    On a plane there are n points with integer coordinates points[i] = [xi, yi]. Your task is to find the minimum time in seconds to visit all points.
+//    You can move according to the next rules:
+//    In one second always you can either move vertically, horizontally by one unit or diagonally (it means to move one unit vertically and one unit horizontally in one second).
+//    You have to visit the points in the same order as they appear in the array.
+    public int minTimeToVisitAllPoints(int[][] points) {
+        int count=0;
+        for(int i=1; i<points.length; i++){
+            int x=Math.abs(points[i][0]-points[i-1][0]);
+            int y=Math.abs(points[i][1]-points[i-1][1]);
+            if(x>=y) count+=x;
+            else count +=y;
+        }
+        return count;
+    }
+
+//    1534. Count Good Triplets
+//    Given an array of integers arr, and three integers a, b and c. You need to find the number of good triplets.
+//            A triplet (arr[i], arr[j], arr[k]) is good if the following conditions are true:
+//            0 <= i < j < k < arr.length
+//|arr[i] - arr[j]| <= a
+//|arr[j] - arr[k]| <= b
+//|arr[i] - arr[k]| <= c
+//    Where |x| denotes the absolute value of x.
+//    Return the number of good triplets.
+
+    public int countGoodTriplets(int[] arr, int a, int b, int c) {
+        int count =0;
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++){
+                if(Math.abs(arr[i]-arr[j])>a) continue;
+                for(int k=j+1; k<arr.length; k++){
+                    if(Math.abs(arr[j]-arr[k])>b) continue;
+                    count+=(Math.abs(arr[i]-arr[k])>c)?0:1;
+                }
+            }
+        }
+        return count;
+    }
 //    1486. XOR Operation in an Array
 //    Given an integer n and an integer start.
 //    Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.

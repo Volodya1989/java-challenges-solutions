@@ -7,18 +7,31 @@ public class Challenges {
     public static void main(String[] args) {
 
     }
-//    1266. Minimum Time Visiting All Points
+
+    //1572. Matrix Diagonal Sum
+//    Given a square matrix mat, return the sum of the matrix diagonals.
+//    Only include the sum of all the elements on the primary diagonal and all the elements on the secondary diagonal that are not part of the primary diagonal.
+    public int diagonalSum(int[][] mat) {
+        int n = mat.length, sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += mat[i][i];
+            sum += mat[n - 1 - i][i];
+        }
+        return n % 2 == 0 ? sum : sum - mat[n / 2][n / 2];
+    }
+
+    //    1266. Minimum Time Visiting All Points
 //    On a plane there are n points with integer coordinates points[i] = [xi, yi]. Your task is to find the minimum time in seconds to visit all points.
 //    You can move according to the next rules:
 //    In one second always you can either move vertically, horizontally by one unit or diagonally (it means to move one unit vertically and one unit horizontally in one second).
 //    You have to visit the points in the same order as they appear in the array.
     public int minTimeToVisitAllPoints(int[][] points) {
-        int count=0;
-        for(int i=1; i<points.length; i++){
-            int x=Math.abs(points[i][0]-points[i-1][0]);
-            int y=Math.abs(points[i][1]-points[i-1][1]);
-            if(x>=y) count+=x;
-            else count +=y;
+        int count = 0;
+        for (int i = 1; i < points.length; i++) {
+            int x = Math.abs(points[i][0] - points[i - 1][0]);
+            int y = Math.abs(points[i][1] - points[i - 1][1]);
+            if (x >= y) count += x;
+            else count += y;
         }
         return count;
     }
@@ -34,47 +47,49 @@ public class Challenges {
 //    Return the number of good triplets.
 
     public int countGoodTriplets(int[] arr, int a, int b, int c) {
-        int count =0;
-        for(int i=0; i<arr.length; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(Math.abs(arr[i]-arr[j])>a) continue;
-                for(int k=j+1; k<arr.length; k++){
-                    if(Math.abs(arr[j]-arr[k])>b) continue;
-                    count+=(Math.abs(arr[i]-arr[k])>c)?0:1;
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (Math.abs(arr[i] - arr[j]) > a) continue;
+                for (int k = j + 1; k < arr.length; k++) {
+                    if (Math.abs(arr[j] - arr[k]) > b) continue;
+                    count += (Math.abs(arr[i] - arr[k]) > c) ? 0 : 1;
                 }
             }
         }
         return count;
     }
-//    1486. XOR Operation in an Array
+
+    //    1486. XOR Operation in an Array
 //    Given an integer n and an integer start.
 //    Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
 //    Return the bitwise XOR of all elements of nums.
     public int xorOperation(int n, int start) {
-        int[]newArray = new int [n];
+        int[] newArray = new int[n];
         int sum = 0;
 
-        for(int i=0; i<n; i++){
-            newArray[i]=start;
-            sum^=newArray[i];
-            start +=2;
+        for (int i = 0; i < n; i++) {
+            newArray[i] = start;
+            sum ^= newArray[i];
+            start += 2;
         }
         return sum;
 
 
     }
-//    1528. Shuffle String
+
+    //    1528. Shuffle String
 //    Given a string s and an integer array indices of the same length.
 //    The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
 //    Return the shuffled string.
-public String restoreString(String s, int[] indices) {
-    char[]result = new char[s.length()];
-    char[]sToChars = s.toCharArray();
-    for(int i=0; i<s.length();i++){
-        result[indices[i]]=sToChars[i];
+    public String restoreString(String s, int[] indices) {
+        char[] result = new char[s.length()];
+        char[] sToChars = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            result[indices[i]] = sToChars[i];
+        }
+        return new String(result);
     }
-    return new String(result);
-}
 
 
 //    771. Jewels and Stones

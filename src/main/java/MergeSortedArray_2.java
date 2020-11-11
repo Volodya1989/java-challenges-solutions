@@ -35,4 +35,9 @@ public void merge(int[] nums1, int m, int[] nums2, int n) {
 //        System.arraycopy(nums2, 0, nums1, m,n);
 //        Arrays.sort(nums1);
 //    }
+
+    public static void merge1(int[] nums1, int m, int[] nums2, int n){
+    System.arraycopy(nums2, 0,nums1, m,n);
+    Arrays.sort(nums1);
+    }
 }

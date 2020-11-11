@@ -15,7 +15,6 @@ public class MaxSubarray {
             sum += nums[i];
             if (nums[i] > sum) {
                 sum = nums[i];
-
             }
             max = Math.max(max, sum);
         }

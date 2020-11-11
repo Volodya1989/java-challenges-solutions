@@ -19,4 +19,6 @@ public class WordsInFile {
         System.out.println("Number of words in the file:" + wc);    //Print the word count
     }
 
+
+
 }

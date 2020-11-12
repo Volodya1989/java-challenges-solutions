@@ -5,11 +5,11 @@ import java.util.List;
 
 
 public class PalindromeLinkedList {
-    public boolean isPalindrome(ListNode head) {
+    public boolean isPalindrome(MergeTwoSortedLists.ListNode head) {
         List<Integer> vals = new ArrayList<>();
 
         // Convert LinkedList into ArrayList.
-        ListNode currentNode = head;
+        MergeTwoSortedLists.ListNode currentNode = head;
         while (currentNode != null) {
             vals.add(currentNode.val);
             currentNode = currentNode.next;

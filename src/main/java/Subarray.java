@@ -15,5 +15,4 @@ public class Subarray {
         return count;
     }
 
-
 }

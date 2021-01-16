@@ -1,5 +1,6 @@
 package src.main.java;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -10,9 +11,9 @@ public class ValidParentheses {
     // Initialize hash map with mappings. This simply makes the code easier to read.
     public void Solution() {
         this.mappings = new HashMap<Character, Character>();
-        this.mappings.put(')', '(');
-        this.mappings.put('}', '{');
-        this.mappings.put(']', '[');
+        this.mappings.put(')', '(' );
+        this.mappings.put('}', '{' );
+        this.mappings.put(']', '[' );
     }
 
     public boolean isValid(String s) {

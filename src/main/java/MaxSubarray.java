@@ -5,21 +5,35 @@ public class MaxSubarray {
 //
 //    Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-    public int maxSubArray(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
+//    public int maxSubArray(int[] nums) {
+//        if (nums.length == 0) {
+//            return 0;
+//        }
+//        int sum = nums[0];
+//        int max = sum;
+//        for (int i = 0; i < nums.length; i++) {
+//            sum += nums[i];
+//            if (nums[i] > sum) {
+//                sum = nums[i];
+//            }
+//            max = Math.max(max, sum);
+//        }
+//        return max;
+//
+//    }
+
+//inhanced for loop
+    public int maxSubArr(int[] nums) {
+        if (nums.length == 0) return 0;
+
         int sum = nums[0];
         int max = sum;
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (nums[i] > sum) {
-                sum = nums[i];
+        for (int num : nums) {
+            sum += num;
+            if (num > sum) {
+                sum = num;
             }
-            max = Math.max(max, sum);
         }
         return max;
     }
-
-
 }

@@ -4,9 +4,9 @@ public class ReverseLinkedList extends MergeTwoSortedLists {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
-        while(curr!=null){
+        while (curr != null) {
             ListNode nextTemp = curr.next;
-            curr.next=prev;
+            curr.next = prev;
             prev = curr;
             curr = nextTemp;
         }

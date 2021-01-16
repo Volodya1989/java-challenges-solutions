@@ -1,13 +1,12 @@
 package src.main.java;
 
 public class Fibonacci {
-    public int fib(int n) {
+        public int fib(int n) {
         if (n <= 1) {
             return n;
         } else if (n == 2) {
             return 1;
         }
-
         int current = 0;
         int prev1 = 1;
         int prev2 = 1;
@@ -18,5 +17,8 @@ public class Fibonacci {
             prev2 = current;
         }
         return current;
+
+
     }
+
 }

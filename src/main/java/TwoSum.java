@@ -11,5 +11,7 @@ public class TwoSum {
         }
         throw new IllegalAccessException("No two sum solution");
 
+
     }
+
 }

@@ -40,7 +40,7 @@ public class MergeTwoSortedLists {
 
 
     //recursion solution
-//      public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+//    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 //         if(l1 == null){
 //             return l2;
 //         }
@@ -58,7 +58,6 @@ public class MergeTwoSortedLists {
 //
 //      }
 //    int head = 0;
-
 }
 
 
